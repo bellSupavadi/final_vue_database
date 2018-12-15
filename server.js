@@ -24,7 +24,7 @@ app.get('/api/json',function(req,res){
 });
 
 app.get('/api/order', db.getAllorder);
-app.get('/api/orderCount', db. getCountContry);
+app.get('/api/order', db. getCountContry);
 
 
 var port = process.env.PORT || 8080;
