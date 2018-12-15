@@ -16,7 +16,7 @@ function getAllorder(req, res) {
         })
 }
 function getCountContry(req, res) {
-    db.any('SELECT COUNT(ship_name),ship_name FROM Orders  Group by ship_name;')
+    db.any('SELECT COUNT(ship_country),ship_country FROM Orders  Group by ship_name;')
         .then(function (data) {
             res.status(200)
                 .json({
