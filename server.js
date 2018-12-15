@@ -22,9 +22,9 @@ var output = {
 app.get('/api/json',function(req,res){
     res.json(output);
 });
-// products
-//ดึง function มาจาก database.js เลย
+
 app.get('/api/order', db.getAllorder);
+app.get('/api/orderCount', db. getCountContry);
 
 
 var port = process.env.PORT || 8080;

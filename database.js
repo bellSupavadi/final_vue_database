@@ -15,8 +15,23 @@ function getAllorder(req, res) {
             console.log('ERROR:', error)
         })
 }
-//เข้าตาม id
+function getCountContry(req, res) {
+    db.any('SELECT COUNT(ship_country),ship_country FROM Orders  Group by ship_country;')
+        .then(function (data) {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Retrieved ALL products'
+                });
+        })
+        .catch(function (error) {
+            console.log('ERROR:', error)
+        })
+}
 
 
 module.exports = {
-    getAllorder}
+    getAllorder,
+    getCountContry
+}
